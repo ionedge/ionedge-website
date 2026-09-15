@@ -1,96 +1,144 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن | أيون إيدج للحلول الذكية</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Cairo', sans-serif; } </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        html[lang="en"] body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased relative overflow-x-hidden">
 
-    <!-- خلفية مضيئة متفاعلة بألوان فاتحة وحيوية -->
-    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
-    <div class="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-cyan-400/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+    <!-- خلفية مضيئة متفاعلة -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+    <div class="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 
-    <!-- شريط التنقل العلوي الزجاجي -->
-    <header class="sticky top-0 z-50 bg-slate-900/40 backdrop-blur-xl border-b border-slate-800/60 shadow-lg shadow-slate-950/20">
+    <!-- شريط التنقل العلوي بخلفية بيضاء زجاجية أنيقة -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80 shadow-lg shadow-slate-900/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-400 to-cyan-400 flex items-center justify-center font-extrabold text-xl text-slate-950 shadow-md shadow-emerald-500/20">أ</div>
-                <a href="index.html" class="text-2xl font-bold tracking-wide bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent">أيون إيدج</a>
-            </div>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-200">
-                <a href="index.html" class="hover:text-emerald-400 transition">الرئيسية</a>
-                <a href="about.html" class="text-emerald-400 transition">من نحن</a>
-                <a href="portfolio.html" class="hover:text-emerald-400 transition">مشاريعنا</a>
-                <a href="services.html" class="hover:text-emerald-400 transition">الخدمات</a>
-                <a href="index.html#contact" class="hover:text-emerald-400 transition">اتصل بنا</a>
-            </nav>
-            <div>
-                <a href="index.html#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-slate-950 font-bold text-sm transition shadow-lg shadow-emerald-400/20 hover:scale-105">
-                    اطلب استشارة
+                <a href="index.html" class="flex items-center group">
+                    <img src="logoblue.png" alt="IonEdge Logo" class="h-10 w-auto object-contain group-hover:scale-105 transition duration-300">
                 </a>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+                <a href="index.html" class="hover:text-blue-600 transition" data-translate="nav-home">الرئيسية</a>
+                <a href="about.html" class="hover:text-blue-600 transition" data-translate="nav-about">من نحن</a>
+                <a href="services.html" class="hover:text-blue-600 transition" data-translate="nav-services">الخدمات</a>
+                <a href="portfolio.html" class="hover:text-blue-600 transition" data-translate="nav-portfolio">مشاريعنا</a>
+                <a href="#contact" class="hover:text-blue-600 transition" data-translate="nav-contact">اتصل بنا</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" id="lang-btn" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold border border-slate-300 transition">English 🌐</button>
+                <a href="index.html#contact" class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs transition shadow-lg shadow-blue-600/20 hover:scale-105 whitespace-nowrap" data-translate="cta-consultation">اطلب استشارة</a>
             </div>
         </div>
     </header>
 
     <!-- قسم مقدمة من نحن -->
     <section class="py-24 max-w-5xl mx-auto px-6 text-center">
-        <span class="inline-block py-1 px-4 rounded-full bg-emerald-400/10 text-emerald-300 border border-emerald-400/25 text-xs font-semibold mb-6 backdrop-blur-md shadow-lg">
-            قصة نجاح وانطلاق
-        </span>
+        <span class="inline-block py-1 px-4 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/25 text-xs font-semibold mb-6 backdrop-blur-md shadow-lg" data-translate="about-badge">قصة نجاح وانطلاق</span>
         <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 text-slate-50">
-            نحن نبني <span class="bg-gradient-to-r from-emerald-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent">الجذور التقنية</span> لنمو أعمالكم
+            <span data-translate="about-title-1">نحن نبني</span> <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-sky-400 bg-clip-text text-transparent" data-translate="about-title-highlight">الجذور التقنية</span> <span data-translate="about-title-2">لنمو أعمالكم</span>
         </h1>
-        <p class="text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-light">
-            تأسست شركة **"أيون إيدج"** لتكون الشريك التقني الأول للشركات الطموحة التي تسعى للتحول الرقمي الكامل، ودمج أحدث تقنيات الذكاء الاصطناعي في عملياتها التشغيلية لتعظيم الإنتاجية والكفاءة.
+        <p class="text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto font-light" data-translate="about-desc">
+            تأسست شركة "أيون إيدج" لتكون الشريك التقني الأول للشركات الطموحة التي تسعى للتحول الرقمي الكامل، ودمج أحدث تقنيات الذكاء الاصطناعي في عملياتها التشغيلية لتعظيم الإنتاجية والكفاءة.
         </p>
     </section>
 
-    <!-- قسم الرؤية والرسالة والقيم بزجاج تفاعلي -->
+    <!-- قسم الرؤية والرسالة والقيم -->
     <section class="py-16 relative border-t border-b border-slate-800/60">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-emerald-400/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+            <div class="p-8 rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
                 <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">🎯</div>
-                <h3 class="text-xl font-bold mb-3 text-slate-100 group-hover:text-emerald-300 transition-colors">رؤيتنا</h3>
-                <p class="text-slate-300 text-sm leading-relaxed font-light">
-                    أن نكون المنصة التقنية الرائدة في ابتكار وتطوير الحلول البرمجية الذكية المعاصرة التي تصنع فارقاً حقيقياً في السوق.
-                </p>
+                <h3 class="text-xl font-bold mb-3 text-slate-100 group-hover:text-blue-400 transition-colors" data-translate="vision-title">رؤيتنا</h3>
+                <p class="text-slate-300 text-sm leading-relaxed font-light" data-translate="vision-desc">أن نكون المنصة التقنية الرائدة في ابتكار وتطوير الحلول البرمجية الذكية المعاصرة التي تصنع فارقاً حقيقياً في السوق.</p>
             </div>
-            <div class="p-8 rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-cyan-400/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+            <div class="p-8 rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
                 <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">🚀</div>
-                <h3 class="text-xl font-bold mb-3 text-slate-100 group-hover:text-cyan-300 transition-colors">رسالتنا</h3>
-                <p class="text-slate-300 text-sm leading-relaxed font-light">
-                    تمكين المؤسسات عبر توفير أنظمة رقمية مرنة، عالية الأمان، وسهلة الاستخدام، تذوب معها كل التعقيدات التقنية.
-                </p>
+                <h3 class="text-xl font-bold mb-3 text-slate-100 group-hover:text-indigo-400 transition-colors" data-translate="mission-title">رسالتنا</h3>
+                <p class="text-slate-300 text-sm leading-relaxed font-light" data-translate="mission-desc">تمكين المؤسسات عبر توفير أنظمة رقمية مرنة، عالية الأمان، وسهلة الاستخدام، تذوب معها كل التعقيدات التقنية.</p>
             </div>
-            <div class="p-8 rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-emerald-400/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
+            <div class="p-8 rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-xl">
                 <div class="text-3xl mb-4 group-hover:scale-110 transition-transform">💎</div>
-                <h3 class="text-xl font-bold mb-3 text-slate-100 group-hover:text-emerald-300 transition-colors">قيمنا الأساسية</h3>
-                <p class="text-slate-300 text-sm leading-relaxed font-light">
-                    الابتكار المستمر، الجودة بلا تساهل، الاحترافية في الالتزام بالمواعيد، والشفافية التامة مع عملائنا.
-                </p>
+                <h3 class="text-xl font-bold mb-3 text-slate-100 group-hover:text-blue-400 transition-colors" data-translate="values-title">قيمنا الأساسية</h3>
+                <p class="text-slate-300 text-sm leading-relaxed font-light" data-translate="values-desc">الابتكار المستمر، الجودة بلا تساهل، الاحترافية في الالتزام بالمواعيد، والشفافية التامة مع عملائنا.</p>
             </div>
         </div>
     </section>
 
     <!-- قسم فريق العمل -->
     <section class="py-24 max-w-5xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-6 text-slate-50">فريق يجمع الشغف بالخبرة</h2>
-        <p class="text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-            يضم فريق "أيون إيدج" نخبة من المهندسين، ومطوري البرمجيات، وخبراء أمن المعلومات وتحليل البيانات، ممن يكرسون طاقاتهم لتحقيق أهدافك.
-        </p>
-        <a href="index.html#contact" class="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-500 hover:to-teal-500 text-slate-950 font-bold transition shadow-xl shadow-emerald-500/20 hover:scale-105">
-            تواصل مع الفريق الآن
-        </a>
+        <h2 class="text-3xl font-bold mb-6 text-slate-50" data-translate="team-heading">فريق يجمع الشغف بالخبرة</h2>
+        <p class="text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed font-light" data-translate="team-desc">يضم فريق "أيون إيدج" نخبة من المهندسين، ومطوري البرمجيات، وخبراء أمن المعلومات وتحليل البيانات، ممن يكرسون طاقاتهم لتحقيق أهدافك.</p>
+        <a href="index.html#contact" class="inline-block px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold transition shadow-xl hover:scale-105" data-translate="team-btn">تواصل مع الفريق الآن</a>
     </section>
 
     <!-- التذييل -->
     <footer class="py-12 bg-slate-950/80 backdrop-blur-lg border-t border-slate-800/80 text-center text-sm text-slate-400">
-        <p>جميع الحقوق محفوظة لشركة <span class="text-emerald-300 font-semibold">أيون إيدج</span> © 2026</p>
+        <p><span data-translate="footer-text">جميع الحقوق محفوظة لشركة</span> <span class="text-blue-400 font-semibold" data-translate="brand">أيون إيدج</span> © 2026</p>
     </footer>
 
+    <script>
+        const translations = {
+            ar: {
+                "brand": "أيون إيدج",
+                "nav-home": "الرئيسية", "nav-about": "من نحن", "nav-services": "الخدمات", "nav-portfolio": "مشاريعنا", "nav-contact": "اتصل بنا",
+                "cta-consultation": "اطلب استشارة",
+                "about-badge": "قصة نجاح وانطلاق",
+                "about-title-1": "نحن نبني", "about-title-highlight": "الجذور التقنية", "about-title-2": "لنمو أعمالكم",
+                "about-desc": "تأسست شركة \"أيون إيدج\" لتكون الشريك التقني الأول للشركات الطموحة التي تسعى للتحول الرقمي الكامل، ودمج أحدث تقنيات الذكاء الاصطناعي في عملياتها التشغيلية لتعظيم الإنتاجية والكفاءة.",
+                "vision-title": "رؤيتنا", "vision-desc": "أن نكون المنصة التقنية الرائدة في ابتكار وتطوير الحلول البرمجية الذكية المعاصرة التي تصنع فارقاً حقيقياً في السوق.",
+                "mission-title": "رسالتنا", "mission-desc": "تمكين المؤسسات عبر توفير أنظمة رقمية مرنة، عالية الأمان، وسهلة الاستخدام، تذوب معها كل التعقيدات التقنية.",
+                "values-title": "قيمنا الأساسية", "values-desc": "الابتكار المستمر، الجودة بلا تساهل، الاحترافية في الالتزام بالمواعيد، والشفافية التامة مع عملائنا.",
+                "team-heading": "فريق يجمع الشغف بالخبرة",
+                "team-desc": "يضم فريق \"أيون إيدج\" نخبة من المهندسين، ومطوري البرمجيات، وخبراء أمن المعلومات وتحليل البيانات، ممن يكرسون طاقاتهم لتحقيق أهدافك.",
+                "team-btn": "تواصل مع الفريق الآن",
+                "footer-text": "جميع الحقوق محفوظة لشركة"
+            },
+            en: {
+                "brand": "IonEdge",
+                "nav-home": "Home", "nav-about": "About Us", "nav-services": "Services", "nav-portfolio": "Portfolio", "nav-contact": "Contact Us",
+                "cta-consultation": "Get Consultation",
+                "about-badge": "A Story of Success & Launch",
+                "about-title-1": "We Build", "about-title-highlight": "Technical Roots", "about-title-2": "for Your Growth",
+                "about-desc": "IonEdge was established to be the primary tech partner for ambitious companies seeking full digital transformation and the integration of AI technologies.",
+                "vision-title": "Our Vision", "vision-desc": "To be the leading tech platform in innovating and developing contemporary smart software solutions.",
+                "mission-title": "Our Mission", "mission-desc": "Empowering organizations by providing flexible, highly secure, and user-friendly digital systems.",
+                "values-title": "Our Core Values", "values-desc": "Continuous innovation, uncompromising quality, punctuality, and complete transparency.",
+                "team-heading": "A Team Combining Passion & Expertise",
+                "team-desc": "The IonEdge team includes elite engineers, software developers, and data security experts dedicated to achieving your goals.",
+                "team-btn": "Contact the Team Now",
+                "footer-text": "All rights reserved for"
+            }
+        };
+
+        let currentLang = localStorage.getItem('ionedge_lang') || 'ar';
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('ionedge_lang', lang);
+            const html = document.getElementById('html-root');
+            const langBtn = document.getElementById('lang-btn');
+            if (lang === 'en') {
+                html.setAttribute('lang', 'en'); html.setAttribute('dir', 'ltr');
+                langBtn.textContent = 'العربية 🌐';
+            } else {
+                html.setAttribute('lang', 'ar'); html.setAttribute('dir', 'rtl');
+                langBtn.textContent = 'English 🌐';
+            }
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) element.textContent = translations[lang][key];
+            });
+        }
+        function toggleLanguage() { applyLanguage(currentLang === 'ar' ? 'en' : 'ar'); }
+        document.addEventListener('DOMContentLoaded', () => { applyLanguage(currentLang); });
+    </script>
 </body>
 </html>
