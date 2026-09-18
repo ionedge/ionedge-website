@@ -17,34 +17,33 @@
     <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
     <div class="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 
-    <!-- شريط التنقل العلوي بخلفية بيضاء بالكامل وباقي الموقع داكن -->
-<header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-        
-        <!-- منطقة الشعار -->
-        <div class="flex items-center gap-4">
-            <a href="index.html" class="flex items-center group">
-                <img src="logoBlue.png" alt="IonEdge Logo" class="h-14 w-auto object-contain group-hover:scale-105 transition duration-300">
-            </a>
+    <!-- شريط التنقل العلوي -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            
+            <!-- منطقة الشعار -->
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="flex items-center group">
+                    <img src="logoBlue.png" alt="IonEdge Logo" class="h-14 w-auto object-contain group-hover:scale-105 transition duration-300">
+                </a>
+            </div>
+            
+            <!-- روابط القائمة -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+                <a href="index.html" class="hover:text-blue-600 transition" data-translate="nav-home">الرئيسية</a>
+                <a href="portfolio.html" class="hover:text-blue-600 transition" data-translate="nav-portfolio">مشاريعنا</a>
+                <a href="index.html#services" class="hover:text-blue-600 transition" data-translate="nav-services">الخدمات</a>
+                <a href="contact.html" class="hover:text-blue-600 transition" data-translate="nav-contact">اتصل بنا</a>
+            </nav>
+            
+            <!-- زر تبديل اللغة فقط (بدون زر اطلب استشارة) -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" id="lang-btn" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition shadow-sm">
+                    English 🌐
+                </button>
+            </div>
         </div>
-        
-        <!-- روابط القائمة (نصوص رمادية غامقة لتناسب الخلفية البيضاء) -->
-        <nav class="hidden md:flex items-center gap-10 text-base font-medium text-slate-700">
-            <a href="index.html" class="hover:text-blue-600 transition">الرئيسية</a>
-            <a href="about.html" class="hover:text-blue-600 transition">من نحن</a>
-            <a href="services.html" class="hover:text-blue-600 transition">الخدمات</a>
-            <a href="portfolio.html" class="hover:text-blue-600 transition">مشاريعنا</a>
-            <a href="#contact" class="hover:text-blue-600 transition">اتصل بنا</a>
-        </nav>
-        
-        <!-- زر الطلب -->
-        <div>
-            <a href="#contact" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base transition shadow-lg shadow-blue-600/20">
-                اطلب استشارة
-            </a>
-        </div>
-    </div>
-</header>
+    </header>
 
     <!-- مقدمة الخدمات -->
     <section class="py-24 max-w-5xl mx-auto px-6 text-center">

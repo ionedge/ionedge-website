@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشاريعنا | أيون إيدج للحلول الذكية</title>
+    <title id="page-title">مشاريعنا | أيون إيدج للحلول الذكية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -13,72 +13,83 @@
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased relative overflow-x-hidden">
 
-    <!-- خلفية مضيئة متفاعلة -->
-    <div class="absolute top-0 right-1/3 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
-    <div class="absolute bottom-1/3 left-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+    <!-- خلفيات مضيئة متفاعلة -->
+    <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+    <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-[100px] -z-10"></div>
 
-  <!-- شريط التنقل العلوي بخلفية بيضاء بالكامل وباقي الموقع داكن -->
-<header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-        
-        <!-- منطقة الشعار -->
-        <div class="flex items-center gap-4">
-            <a href="index.html" class="flex items-center group">
-                <img src="logoBlue.png" alt="IonEdge Logo" class="h-14 w-auto object-contain group-hover:scale-105 transition duration-300">
-            </a>
+    <!-- شريط التنقل العلوي -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            
+            <!-- منطقة الشعار -->
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="flex items-center group">
+                    <img src="logoBlue.png" alt="IonEdge Logo" class="h-14 w-auto object-contain group-hover:scale-105 transition duration-300">
+                </a>
+            </div>
+            
+            <!-- روابط القائمة -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+                <a href="index.html" class="hover:text-blue-600 transition" data-translate="nav-home">الرئيسية</a>
+                <a href="portfolio.html" class="hover:text-blue-600 transition" data-translate="nav-portfolio">مشاريعنا</a>
+                <a href="index.html#services" class="hover:text-blue-600 transition" data-translate="nav-services">الخدمات</a>
+                <a href="contact.html" class="hover:text-blue-600 transition" data-translate="nav-contact">اتصل بنا</a>
+            </nav>
+            
+            <!-- زر تبديل اللغة فقط (بدون زر اطلب استشارة) -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" id="lang-btn" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition shadow-sm">
+                    English 🌐
+                </button>
+            </div>
         </div>
-        
-        <!-- روابط القائمة (نصوص رمادية غامقة لتناسب الخلفية البيضاء) -->
-        <nav class="hidden md:flex items-center gap-10 text-base font-medium text-slate-700">
-            <a href="index.html" class="hover:text-blue-600 transition">الرئيسية</a>
-            <a href="about.html" class="hover:text-blue-600 transition">من نحن</a>
-            <a href="services.html" class="hover:text-blue-600 transition">الخدمات</a>
-            <a href="portfolio.html" class="hover:text-blue-600 transition">مشاريعنا</a>
-            <a href="#contact" class="hover:text-blue-600 transition">اتصل بنا</a>
-        </nav>
-        
-        <!-- زر الطلب -->
-        <div>
-            <a href="#contact" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base transition shadow-lg shadow-blue-600/20">
-                اطلب استشارة
-            </a>
-        </div>
-    </div>
-</header>
+    </header>
 
-    <!-- محتوى معرض الأعمال -->
-    <section class="py-24 max-w-7xl mx-auto px-6">
+    <!-- قسم معرض المشاريع -->
+    <section class="py-24 max-w-7xl mx-auto px-6 relative">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <h1 class="text-4xl font-bold mb-4 text-slate-50" data-translate="port-heading">سجل أعمالنا الذكية</h1>
-            <p class="text-slate-300 font-light" data-translate="port-desc">نماذج من الحلول التقنية والأنظمة الرقمية التي طورتها "أيون إيدج" لتمكين شركائنا.</p>
+            <p class="text-slate-300 font-light" data-translate="port-subheading">نماذج من الحلول التقنية والأنظمة الرقمية المتقدمة التي طورتها "أيون إيدج" لشركائنا.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- مشروع 1 -->
-            <div class="rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-2xl overflow-hidden">
-                <div class="h-48 bg-slate-800/40 border-b border-slate-800 flex items-center justify-center text-slate-400 font-bold text-lg group-hover:bg-slate-800/70 transition" data-translate="p1-img">صورة النظام الذكي</div>
+            <div class="rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 overflow-hidden group hover:border-blue-500/50 transition duration-300 shadow-2xl">
+                <div class="h-48 bg-slate-950/60 flex items-center justify-center text-slate-500 font-semibold text-base group-hover:bg-slate-900 transition" data-translate="proj1-img">
+                    صورة النظام الذكي
+                </div>
                 <div class="p-6">
-                    <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20" data-translate="p1-tag">الذكاء الاصطناعي</span>
-                    <h3 class="text-xl font-bold mt-4 mb-2 text-slate-100 group-hover:text-blue-400 transition-colors" data-translate="p1-title">منصة تحليل البيانات التنبؤية</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light" data-translate="p1-desc">نظام متكامل لمعالجة بيانات المبيعات الكبرى واستخراج مؤشرات أداء فورية لقطاع التجزئة.</p>
+                    <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/25" data-translate="proj1-tag">الذكاء الاصطناعي</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-slate-100" data-translate="proj1-title">منصة تحليل البيانات التنبؤية</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light mb-6" data-translate="proj1-desc">نظام متكامل لمعالجة بيانات المبيعات الكبرى واستخراج مؤشرات أداء فورية لقطاع التجزئة.</p>
+                    <span class="text-xs font-semibold text-indigo-400" data-translate="proj1-client">قطاع التجزئة والخدمات اللوجستية</span>
                 </div>
             </div>
+
             <!-- مشروع 2 -->
-            <div class="rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-indigo-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-2xl overflow-hidden">
-                <div class="h-48 bg-slate-800/40 border-b border-slate-800 flex items-center justify-center text-slate-400 font-bold text-lg group-hover:bg-slate-800/70 transition" data-translate="p2-img">صورة المنصة السحابية</div>
+            <div class="rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 overflow-hidden group hover:border-indigo-500/50 transition duration-300 shadow-2xl">
+                <div class="h-48 bg-slate-950/60 flex items-center justify-center text-slate-500 font-semibold text-base group-hover:bg-slate-900 transition" data-translate="proj2-img">
+                    صورة المنصة السحابية
+                </div>
                 <div class="p-6">
-                    <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20" data-translate="p2-tag">أتمتة العمليات</span>
-                    <h3 class="text-xl font-bold mt-4 mb-2 text-slate-100 group-hover:text-indigo-400 transition-colors" data-translate="p2-title">نظام إدارة موارد الشركات (ERP)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light" data-translate="p2-desc">أتمتة كاملة للعمليات المالية والمخزون وإدارة شؤون الموظفين لشركة صناعية كبرى.</p>
+                    <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/25" data-translate="proj2-tag">أتمتة العمليات</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-slate-100" data-translate="proj2-title">نظام إدارة موارد الشركات (ERP)</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light mb-6" data-translate="proj2-desc">أتمتة كاملة للعمليات المالية والمخزون وإدارة شؤون الموظفين لشركة صناعية كبرى.</p>
+                    <span class="text-xs font-semibold text-blue-400" data-translate="proj2-client">القطاع الصناعي</span>
                 </div>
             </div>
+
             <!-- مشروع 3 -->
-            <div class="rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-2 shadow-2xl overflow-hidden">
-                <div class="h-48 bg-slate-800/40 border-b border-slate-800 flex items-center justify-center text-slate-400 font-bold text-lg group-hover:bg-slate-800/70 transition" data-translate="p3-img">صورة تطبيق الويب</div>
+            <div class="rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/80 overflow-hidden group hover:border-blue-500/50 transition duration-300 shadow-2xl">
+                <div class="h-48 bg-slate-950/60 flex items-center justify-center text-slate-500 font-semibold text-base group-hover:bg-slate-900 transition" data-translate="proj3-img">
+                    صورة تطبيق الويب
+                </div>
                 <div class="p-6">
-                    <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20" data-translate="p3-tag">تطوير البرمجيات</span>
-                    <h3 class="text-xl font-bold mt-4 mb-2 text-slate-100 group-hover:text-blue-400 transition-colors" data-translate="p3-title">بوابة الخدمات الحكومية الرقمية</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light" data-translate="p3-desc">تطوير واجهات برمجة وتطبيقات ويب فائقة الأمان لتقديم خدمات المواطنين بسهولة.</p>
+                    <span class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/25" data-translate="proj3-tag">تطوير البرمجيات</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-slate-100" data-translate="proj3-title">بوابة الخدمات الحكومية الرقمية</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed font-light mb-6" data-translate="proj3-desc">تطوير واجهات برمجة وتطبيقات ويب فائقة الأمان لتقديم خدمات المواطنين بسهولة.</p>
+                    <span class="text-xs font-semibold text-indigo-400" data-translate="proj3-client">القطاع الحكومي والخدمي</span>
                 </div>
             </div>
         </div>
@@ -89,52 +100,96 @@
         <p><span data-translate="footer-text">جميع الحقوق محفوظة لشركة</span> <span class="text-blue-400 font-semibold" data-translate="brand">أيون إيدج</span> © 2026</p>
     </footer>
 
+    <!-- سكريبت الترجمة -->
     <script>
         const translations = {
             ar: {
                 "brand": "أيون إيدج",
-                "nav-home": "الرئيسية", "nav-about": "من نحن", "nav-services": "الخدمات", "nav-portfolio": "مشاريعنا", "nav-contact": "اتصل بنا",
+                "nav-home": "الرئيسية", 
+                "nav-services": "الخدمات", 
+                "nav-portfolio": "مشاريعنا", 
+                "nav-contact": "اتصل بنا",
                 "cta-consultation": "اطلب استشارة",
                 "port-heading": "سجل أعمالنا الذكية",
-                "port-desc": "نماذج من الحلول التقنية والأنظمة الرقمية التي طورتها \"أيون إيدج\" لتمكين شركائنا.",
-                "p1-img": "صورة النظام الذكي", "p1-tag": "الذكاء الاصطناعي", "p1-title": "منصة تحليل البيانات التنبؤية", "p1-desc": "نظام متكامل لمعالجة بيانات المبيعات الكبرى واستخراج مؤشرات أداء فورية لقطاع التجزئة.",
-                "p2-img": "صورة المنصة السحابية", "p2-tag": "أتمتة العمليات", "p2-title": "نظام إدارة موارد الشركات (ERP)", "p2-desc": "أتمتة كاملة للعمليات المالية والمخزون وإدارة شؤون الموظفين لشركة صناعية كبرى.",
-                "p3-img": "صورة تطبيق الويب", "p3-tag": "تطوير البرمجيات", "p3-title": "بوابة الخدمات الحكومية الرقمية", "p3-desc": "تطوير واجهات برمجة وتطبيقات ويب فائقة الأمان لتقديم خدمات المواطنين بسهولة.",
+                "port-subheading": "نماذج من الحلول التقنية والأنظمة الرقمية المتقدمة التي طورتها \"أيون إيدج\" لشركائنا.",
+                "proj1-img": "صورة النظام الذكي",
+                "proj1-tag": "الذكاء الاصطناعي",
+                "proj1-title": "منصة تحليل البيانات التنبؤية",
+                "proj1-desc": "نظام متكامل لمعالجة بيانات المبيعات الكبرى واستخراج مؤشرات أداء فورية لقطاع التجزئة.",
+                "proj1-client": "قطاع التجزئة والخدمات اللوجستية",
+                "proj2-img": "صورة المنصة السحابية",
+                "proj2-tag": "أتمتة العمليات",
+                "proj2-title": "نظام إدارة موارد الشركات (ERP)",
+                "proj2-desc": "أتمتة كاملة للعمليات المالية والمخزون وإدارة شؤون الموظفين لشركة صناعية كبرى.",
+                "proj2-client": "القطاع الصناعي",
+                "proj3-img": "صورة تطبيق الويب",
+                "proj3-tag": "تطوير البرمجيات",
+                "proj3-title": "بوابة الخدمات الحكومية الرقمية",
+                "proj3-desc": "تطوير واجهات برمجة وتطبيقات ويب فائقة الأمان لتقديم خدمات المواطنين بسهولة.",
+                "proj3-client": "القطاع الحكومي والخدمي",
                 "footer-text": "جميع الحقوق محفوظة لشركة"
             },
             en: {
                 "brand": "IonEdge",
-                "nav-home": "Home", "nav-about": "About Us", "nav-services": "Services", "nav-portfolio": "Portfolio", "nav-contact": "Contact Us",
+                "nav-home": "Home", 
+                "nav-services": "Services", 
+                "nav-portfolio": "Portfolio", 
+                "nav-contact": "Contact Us",
                 "cta-consultation": "Get Consultation",
-                "port-heading": "Our Smart Portfolio",
-                "port-desc": "Examples of tech solutions and digital systems developed by IonEdge to empower our partners.",
-                "p1-img": "Smart System Image", "p1-tag": "AI", "p1-title": "Predictive Data Analytics Platform", "p1-desc": "An integrated system for processing major sales data and extracting real-time performance indicators.",
-                "p2-img": "Cloud Platform Image", "p2-tag": "Automation", "p2-title": "Enterprise Resource Planning (ERP)", "p2-desc": "Complete automation of financial operations, inventory, and HR for a major industrial company.",
-                "p3-img": "Web App Image", "p3-tag": "Software Dev", "p3-title": "Digital Government Services Portal", "p3-desc": "Developing highly secure APIs and web applications to easily deliver citizen services.",
+                "port-heading": "Our Portfolio",
+                "port-subheading": "Examples of advanced technical solutions and digital systems developed by IonEdge for our partners.",
+                "proj1-img": "Smart System Image",
+                "proj1-tag": "Artificial Intelligence",
+                "proj1-title": "Predictive Data Analytics Platform",
+                "proj1-desc": "An integrated system for processing major sales data and extracting instant performance indicators for retail.",
+                "proj1-client": "Retail & Logistics Sector",
+                "proj2-img": "Cloud Platform Image",
+                "proj2-tag": "Process Automation",
+                "proj2-title": "Enterprise Resource Planning (ERP)",
+                "proj2-desc": "Complete automation of financial operations, inventory, and HR management for a major industrial enterprise.",
+                "proj2-client": "Industrial Sector",
+                "proj3-img": "Web App Image",
+                "proj3-tag": "Software Development",
+                "proj3-title": "Digital Government Services Portal",
+                "proj3-desc": "Developing ultra-secure APIs and web applications to deliver citizen services seamlessly.",
+                "proj3-client": "Government & Services Sector",
                 "footer-text": "All rights reserved for"
             }
         };
 
         let currentLang = localStorage.getItem('ionedge_lang') || 'ar';
+
         function applyLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('ionedge_lang', lang);
             const html = document.getElementById('html-root');
             const langBtn = document.getElementById('lang-btn');
+
             if (lang === 'en') {
-                html.setAttribute('lang', 'en'); html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
                 langBtn.textContent = 'العربية 🌐';
             } else {
-                html.setAttribute('lang', 'ar'); html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
                 langBtn.textContent = 'English 🌐';
             }
+
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
-                if (translations[lang][key]) element.textContent = translations[lang][key];
+                if (translations[lang] && translations[lang][key] !== undefined) {
+                    element.textContent = translations[lang][key];
+                }
             });
         }
-        function toggleLanguage() { applyLanguage(currentLang === 'ar' ? 'en' : 'ar'); }
-        document.addEventListener('DOMContentLoaded', () => { applyLanguage(currentLang); });
+
+        function toggleLanguage() {
+            applyLanguage(currentLang === 'ar' ? 'en' : 'ar');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyLanguage(currentLang);
+        });
     </script>
 </body>
 </html>
