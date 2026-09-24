@@ -17,33 +17,50 @@
     <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
     <div class="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-indigo-500/15 rounded-full blur-[120px] -z-10 animate-pulse"></div>
 
-    <!-- شريط التنقل العلوي -->
-    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            
-            <!-- منطقة الشعار -->
-            <div class="flex items-center gap-4">
-                <a href="index.html" class="flex items-center group">
-                    <img src="logoBlue.png" alt="IonEdge Logo" class="h-14 w-auto object-contain group-hover:scale-105 transition duration-300">
-                </a>
-            </div>
-            
-            <!-- روابط القائمة -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
-                <a href="index.html" class="hover:text-blue-600 transition" data-translate="nav-home">الرئيسية</a>
-                <a href="portfolio.html" class="hover:text-blue-600 transition" data-translate="nav-portfolio">مشاريعنا</a>
-                <a href="index.html#services" class="hover:text-blue-600 transition" data-translate="nav-services">الخدمات</a>
-                <a href="contact.html" class="hover:text-blue-600 transition" data-translate="nav-contact">اتصل بنا</a>
-            </nav>
-            
-            <!-- زر تبديل اللغة فقط (بدون زر اطلب استشارة) -->
-            <div class="flex items-center gap-4">
-                <button onclick="toggleLanguage()" id="lang-btn" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition shadow-sm">
-                    English 🌐
-                </button>
-            </div>
+    <!-- شريط التنقل العلوي المتجاوب -->
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between">
+        
+        <!-- الشعار -->
+        <div class="flex items-center">
+            <a href="index.html" class="flex items-center group">
+                <img src="logoBlue.png" alt="IonEdge Logo" class="h-10 sm:h-14 w-auto object-contain group-hover:scale-105 transition duration-300">
+            </a>
         </div>
-    </header>
+        
+        <!-- روابط القائمة للشاشات الكبيرة (تختفي في الموبايل) -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+            <a href="index.html" class="hover:text-blue-600 transition" data-translate="nav-home">الرئيسية</a>
+            <a href="portfolio.html" class="hover:text-blue-600 transition" data-translate="nav-portfolio">مشاريعنا</a>
+            <a href="services.html" class="hover:text-blue-600 transition" data-translate="nav-services">الخدمات</a>
+            <a href="about.html" class="hover:text-blue-600 transition" data-translate="nav-about">من نحن</a>
+            <a href="contact.html" class="hover:text-blue-600 transition" data-translate="nav-contact">اتصل بنا</a>
+        </nav>
+        
+        <!-- أدوات الجهة اليسرى (زر اللغة + زر القائمة للموبايل) -->
+        <div class="flex items-center gap-3">
+            <button onclick="toggleLanguage()" id="lang-btn" class="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold border border-slate-300 transition shadow-sm">
+                English 🌐
+            </button>
+            
+            <!-- زر القائمة للجوال (Hamburger Button) -->
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-250 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- القائمة المنسدلة للجوال (تظهر عند النقر على زر القائمة) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 shadow-lg space-y-3">
+        <a href="index.html" class="block py-2 text-slate-700 hover:text-blue-600 font-medium" data-translate="nav-home">الرئيسية</a>
+        <a href="portfolio.html" class="block py-2 text-slate-700 hover:text-blue-600 font-medium" data-translate="nav-portfolio">مشاريعنا</a>
+        <a href="services.html" class="block py-2 text-slate-700 hover:text-blue-600 font-medium" data-translate="nav-services">الخدمات</a>
+        <a href="about.html" class="block py-2 text-slate-700 hover:text-blue-600 font-medium" data-translate="nav-about">من نحن</a>
+        <a href="contact.html" class="block py-2 text-slate-700 hover:text-blue-600 font-medium" data-translate="nav-contact">اتصل بنا</a>
+    </div>
+</header>
 
     <!-- مقدمة الخدمات -->
     <section class="py-24 max-w-5xl mx-auto px-6 text-center">
@@ -139,6 +156,10 @@
         }
         function toggleLanguage() { applyLanguage(currentLang === 'ar' ? 'en' : 'ar'); }
         document.addEventListener('DOMContentLoaded', () => { applyLanguage(currentLang); });
+    function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+}
     </script>
 </body>
 </html>
